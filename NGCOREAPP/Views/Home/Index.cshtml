@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row" ng-app="APP" ng-controller="HomeController">
+
+ <input class="form-control" placeholder="Kullanici adinizi giriniz" ng-model="user.Username"/>
+ <input class="form-control" placeholder="Şifrenizi giriniz" ng-model="user.Password"/>
+ <input class="form-control" placeholder="Adinizi giriniz" ng-model="user.Name"/>
+ <input class="form-control" placeholder="Soyadinizi giriniz" ng-model="user.Surname"/>
+ 
+ <button class="btn btn-primary" ng-click="AddUser()">EKLE</button>
+ 
+
+
+</div>
+
+@section Scripts {
+
+    <script src="~/js/Home.js"></script>
+
+
+}
