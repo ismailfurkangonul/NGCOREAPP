@@ -1,13 +1,14 @@
 ﻿var app = angular.module("APP", []);
 app.controller("HomeController", function ($scope, $http) {
 
-    $scope.AddUser = function () { 
+    $scope.GenerateShort = function () { 
     $http({
         method: "POST",
         headers: { "Content-Type": "Application/json; charset=utf-8" },
-        url: "/Home/Add",
-        data: $scope.user,
+        url: "/Home/GenerateShortLink",
+        data: $scope._link,
     }).then(function (result) {
+        $scope.ShortLink = result.data;
 
 
 

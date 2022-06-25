@@ -4,14 +4,19 @@
 
 <div class="row" ng-app="APP" ng-controller="HomeController">
 
- <input class="form-control" placeholder="Kullanici adinizi giriniz" ng-model="user.Username"/>
- <input class="form-control" placeholder="Şifrenizi giriniz" ng-model="user.Password"/>
- <input class="form-control" placeholder="Adinizi giriniz" ng-model="user.Name"/>
- <input class="form-control" placeholder="Soyadinizi giriniz" ng-model="user.Surname"/>
- 
- <button class="btn btn-primary" ng-click="AddUser()">EKLE</button>
- 
-
+ <div class="col-md-12">
+     <div class="col-md-11">
+         <div class="form-group">
+             <label>uzun linki giriniz</label>
+             <input class="form-control" ng-model="_link.LongUrl" />
+         </div>
+     </div>
+  <div class="col-md-1">
+       <button class="btn btn-primary" ng-click="GenerateShort()">Kısalt</button>
+ </div>
+  <div class="col-md-12">
+      <strong>kisa linkiniz:{{ShortLink}}</strong>
+   </div>
 
 </div>
 
