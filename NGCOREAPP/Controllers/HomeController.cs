@@ -19,6 +19,12 @@ namespace NGCOREAPP.Controllers
             GenerateLink generate = new GenerateLink();
 
             _link.ShortUrl = generate.Generate();
+            if(!_link.LongUrl.Contains("http"))
+            {
+
+                _link.LongUrl = "http://" + _link.LongUrl;
+
+            }
 
             Links.LinkList.Add(_link);
          
