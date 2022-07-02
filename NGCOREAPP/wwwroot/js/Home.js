@@ -45,7 +45,18 @@ app.controller("HomeController", function ($scope, $http) {
       
     }
    
-   
+    $scope.ExtraCredit = function (link) {
+        $scope.currentLink = link;
+        $http({
+            method: "POST",
+            headers: { "Content-Type": "Application/json; charset=utf-8" },
+            url: "/Home/ExtraCredit",
+            data: $scope.currentLink,
+        }).then(function (result) {
+
+        });
+
+    }
     
 
 });
@@ -60,3 +71,5 @@ function Copy(shortCode) {
    
 
 }
+
+

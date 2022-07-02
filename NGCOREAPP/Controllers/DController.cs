@@ -10,7 +10,13 @@ namespace NGCOREAPP.Controllers
         {
             Link link= Links.LinkList.Where(x => x.ShortUrl == I).First();
             link.ClickCount++;
-            Response.Redirect(link.LongUrl);
+            if (link.ClickCount<= link.ClickLimit)
+            {
+                Response.Redirect(link.LongUrl);
+
+            }
+            
+           
             return View();
         }
 

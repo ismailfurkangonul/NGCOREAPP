@@ -25,9 +25,11 @@ namespace NGCOREAPP.Controllers
                 _link.LongUrl = "http://" + _link.LongUrl;
 
             }
+             
 
             Links.LinkList.Add(_link);
-         
+
+           
 
             return _link.ShortUrl;
 
@@ -39,6 +41,14 @@ namespace NGCOREAPP.Controllers
             return Links.LinkList;
 
         }
-
+        [HttpPost]
+        public string ExtraCredit([FromBody] Link _link)
+        {
+           Link link= Links.LinkList.Where(x => x.ShortUrl == _link.ShortUrl).First();
+            link.ClickLimit += 5;
+            return "Limitiniz Arttırılmıştır";  
+        
+        
+        }
     }
 }

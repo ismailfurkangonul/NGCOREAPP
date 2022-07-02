@@ -5,3 +5,4 @@
         public static List<Link> LinkList { get; set; } = new List<Link>();
     }
 }
+
